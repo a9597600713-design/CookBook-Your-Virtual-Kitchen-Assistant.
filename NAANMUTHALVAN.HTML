@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookBook: Your Virtual Kitchen Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark {
+            background-color: #1a202c;
+            color: #f7fafc;
+        }
+        .light {
+            background-color: #f7fafc;
+            color: #2d3748;
+        }
+        .recipe-card {
+            transition: transform 0.3s;
+        }
+        .recipe-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="light">
+    <header class="bg-gradient-to-r from-orange-500 to-red-600 text-white p-6 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">CookBook: Your Virtual Kitchen Assistant</h1>
+            <button id="theme-toggle" class="px-4 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition">Dark Mode</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <section class="text-center mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Discover Delicious Recipes</h2>
+            <input type="text" id="search-input" placeholder="Search for recipes..." class="w-full md:w-1/2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+        </section>
+
+        <div id="recipe-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Sample recipes -->
+            <div class="recipe-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5a671817-c43d-4e40-84a5-aa422ac9b3b8.png" alt="Close-up of creamy fettuccine pasta with crispy bacon pieces, a light sprinkling of Parmesan cheese, and chopped parsley garnish in a rustic Italian kitchen setting">
+                <h3 class="text-xl font-bold mt-4">Pasta Carbonara</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">A classic Italian dish with eggs, cheese, and pancetta.</p>
+                <details>
+                    <summary class="text-blue-500 cursor-pointer">View Full Recipe</summary>
+                    <div class="mt-4">
+                        <h4 class="font-semibold">Ingredients:</h4>
+                        <ul class="list-disc list-inside mb-4">
+                            <li>200g fettuccine</li>
+                            <li>100g pancetta</li>
+                            <li>2 large eggs</li>
+                            <li>50g grated Parmesan</li>
+                            <li>Salt and pepper</li>
+                        </ul>
+                        <h4 class="font-semibold">Instructions:</h4>
+                        <ol class="list-decimal list-inside">
+                            <li>Cook pasta.</li>
+                            <li>Fry pancetta.</li>
+                            <li>Mix eggs and cheese.</li>
+                            <li>Combine.</li>
+                        </ol>
+                    </div>
+                </details>
+                <button class="mt-4 favorite-btn px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600">Add to Favorites</button>
+            </div>
+
+            <div class="recipe-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/506bf1e7-acfa-46b0-ac49-1a281336cf5c.png" alt="Vibrant wok with sliced chicken, colorful bell peppers, broccoli florets, and snap peas sizzling over a gas stove in a modern Asian-Inspired kitchen">
+                <h3 class="text-xl font-bold mt-4">Chicken Stir Fry</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Quick and healthy with veggies and soy sauce.</p>
+                <details>
+                    <summary class="text-blue-500 cursor-pointer">View Full Recipe</summary>
+                    <div class="mt-4">
+                        <h4 class="font-semibold">Ingredients:</h4>
+                        <ul class="list-disc list-inside mb-4">
+                            <li>300g chicken breast</li>
+                            <li>2 bell peppers</li>
+                            <li>1 broccoli head</li>
+                            <li>Soy sauce</li>
+                        </ul>
+                        <h4 class="font-semibold">Instructions:</h4>
+                        <ol class="list-decimal list-inside">
+                            <li>Slice chicken.</li>
+                            <li>Stir fry veggies.</li>
+                            <li>Add sauce.</li>
+                            <li>Serve hot.</li>
+                        </ol>
+                    </div>
+                </details>
+                <button class="mt-4 favorite-btn px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600">Add to Favorites</button>
+            </div>
+
+            <div class="recipe-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/451b4dda-b147-44d3-b7e8-53bbc3f083fc.png" alt="Golden-brown chocolate muffins cooling on a wire rack with steam rising, dusted with powdered sugar, next to a mixing bowl in a cozy home bakery">
+                <h3 class="text-xl font-bold mt-4">Chocolate Muffins</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Rich and indulgent chocolate baked goods.</p>
+                <details>
+                    <summary class="text-blue-500 cursor-pointer">View Full Recipe</summary>
+                    <div class="mt-4">
+                        <h4 class="font-semibold">Ingredients:</h4>
+                        <ul class="list-disc list-inside mb-4">
+                            <li>1 cup flour</li>
+                            <li>1/2 cup cocoa</li>
+                            <li>1 egg</li>
+                            <li>1/2 cup chocolate chips</li>
+                        </ul>
+                        <h4 class="font-semibold">Instructions:</h4>
+                        <ol class="list-decimal list-inside">
+                            <li>Bake at 350°F for 20 mins.</li>
+                            <li>Mix batter.</li>
+                            <li>Fold in chips.</li>
+                            <li>Fill muffin cups.</li>
+                        </ol>
+                    </div>
+                </details>
+                <button class="mt-4 favorite-btn px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600">Add to Favorites</button>
+            </div>
+        </div>
+
+        <section id="add-recipe" class="mt-8 bg-gray-100 dark:bg-gray-700 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4">Add Your Own Recipe</h3>
+            <form id="recipe-form">
+                <input type="text" placeholder="Recipe Name" class="w-full p-3 mb-4 border rounded">
+                <textarea placeholder="Ingredients (comma separated)" class="w-full p-3 mb-4 border rounded"></textarea>
+                <textarea placeholder="Instructions (step by step)" class="w-full p-3 mb-4 border rounded"></textarea>
+                <button type="submit" class="px-6 py-3 bg-green-500 text-white rounded hover:bg-green-600">Submit Recipe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4">
+        <p>© 2023 CookBook. Your kitchen companion.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+            themeToggle.textContent = body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+        });
+
+        // Favorite buttons
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('Recipe added to favorites!');
+                btn.textContent = 'Favorited';
+                btn.disabled = true;
+            });
+        });
+
+        // Form submission
+        document.getElementById('recipe-form').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Recipe submitted! (This is a demo.)');
+        });
+    </script>
+</body>
+</html>
+</content>
+</create_file>
